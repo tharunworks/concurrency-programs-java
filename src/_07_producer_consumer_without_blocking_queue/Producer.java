@@ -16,7 +16,7 @@ public class Producer implements Runnable{
             try {
                 Item addedItem = new Item(Thread.currentThread().getName());
                 this.itemBlockingQueue.add(addedItem);
-                System.out.println("addedItem.itemId " + addedItem.itemId + ", addedItem.threadName" + Thread.currentThread().getName());
+                System.out.println("addedItem.itemId: " + addedItem.itemId + ", addedItem.threadName: " + Thread.currentThread().getName());
             }catch (IllegalStateException e){
                 System.out.println("Queue is full");
             }

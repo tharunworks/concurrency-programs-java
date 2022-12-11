@@ -15,7 +15,7 @@ public class MyBlockingQueue<T> {
     void add(T item){
         lock.lock();
         try {
-            if(queue.size() == maxQueueSize){
+            while (queue.size() == maxQueueSize) {
 //                handle when queue is full
                 try {
                     notFull.await();
@@ -24,6 +24,7 @@ public class MyBlockingQueue<T> {
                 }
             }
             queue.add(item);
+            notEmpty.signalAll();
         }finally {
             lock.unlock();
         }
@@ -32,11 +33,16 @@ public class MyBlockingQueue<T> {
     T remove(){
         lock.lock();
         try {
-            if(queue.isEmpty()){
+            while (queue.isEmpty()){
 //           handle when queue is empty
-
+                try {
+                    notEmpty.await();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
             T removedItem = queue.remove();
+            notFull.signalAll();
             return (T) removedItem;
         }finally {
             lock.unlock();
