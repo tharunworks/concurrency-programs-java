@@ -1,7 +1,5 @@
 package _07_producer_consumer_without_blocking_queue;
 
-import java.util.concurrent.BlockingQueue;
-
 public class Producer implements Runnable{
 
     MyBlockingQueue<Item> itemBlockingQueue;

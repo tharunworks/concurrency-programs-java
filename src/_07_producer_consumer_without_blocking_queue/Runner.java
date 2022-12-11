@@ -1,8 +1,5 @@
 package _07_producer_consumer_without_blocking_queue;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
 public class Runner {
 
     MyBlockingQueue<Item> myBlockingQueue;

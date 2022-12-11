@@ -1,7 +1,6 @@
 package _07_producer_consumer_without_blocking_queue;
 
 import java.util.NoSuchElementException;
-import java.util.concurrent.BlockingQueue;
 
 public class Consumer implements Runnable{
     MyBlockingQueue<Item> itemBlockingQueue;
