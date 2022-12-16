@@ -20,5 +20,11 @@ public class Runner {
         }
 
         System.out.println("Thread Name: " + Thread.currentThread().getName());
+
+
+//        NOTE: why program is not terminated?
+//        Need to add executorService.shutdown() to terminate. The JVM shuts down when all user non-daemon threads finish.
+//        Executors spawn non-daemon threads.
+//        For more, refer daemon vs non-daemon threads.
     }
 }
