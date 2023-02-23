@@ -12,7 +12,7 @@ public class Producer implements Runnable{
     public void run() {
         while (true){
             try {
-                Item addedItem = new Item(Thread.currentThread().getName());
+                Item addedItem = new Item();
                 this.itemBlockingQueue.add(addedItem);
                 System.out.println("addedItem.itemId: " + addedItem.itemId + ", addedItem.threadName: " + Thread.currentThread().getName());
             }catch (IllegalStateException e){

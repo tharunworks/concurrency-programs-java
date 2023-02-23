@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Item {
     public final int itemId;
 
-    public Item(String threadName) {
+    public Item() {
         this.itemId = new Random().nextInt();
     }
 }

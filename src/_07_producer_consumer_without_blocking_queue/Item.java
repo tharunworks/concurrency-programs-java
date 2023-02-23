@@ -5,7 +5,7 @@ import java.util.Random;
 public class Item {
     public final int itemId;
 
-    public Item(String threadName) {
+    public Item() {
         this.itemId = new Random().nextInt();
     }
 }
