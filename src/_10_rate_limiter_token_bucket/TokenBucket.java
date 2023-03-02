@@ -1,7 +1,7 @@
 package _10_rate_limiter_token_bucket;
 
 public class TokenBucket {
-    int bucketSize;
+    int bucketSize; // capacity/max burst/burstCapacity
     int refillRate;
     int currentTokens;
     long lastUpdateTime;
