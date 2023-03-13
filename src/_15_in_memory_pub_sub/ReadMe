@@ -1,0 +1,3 @@
+Design pub sub system.
+1. Producer will add events to queue.
+2. Multiple consumers will consume events from the queue in an orderly fashion.
