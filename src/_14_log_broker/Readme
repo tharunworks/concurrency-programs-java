@@ -1,0 +1,61 @@
+Problem Statement:
+// Asked in Cohesity.
+// Raise Server Timeout Alerts
+// We have a server, which is logging request start and end times. We are getting a stream of these logs. We want to raise alerts if the server takes more time than the configured Timeout.
+
+
+// Request id 1 start time 1
+// Request id 3 start time 2
+// Request id 1 end time 3
+
+// Request id 1 start time 1
+// Request id 6 start time 20
+// Request id 5 start time 5
+
+// Timeout 10 seconds - common configured timeout for ALL requests
+
+
+// We want to implement 3 functions
+// 1. StoreRequest - for every request start
+// 2. RemoveRequest - for every request end
+// 3. CheckTimeout - every timeout/2 in another thread
+//
+
+[r1:s1 + t, s2+ t]
+
+
+// CheckTimeout at 15 seconds - Request id 3 has timed out
+// 10k-50k requests per second
+
+
+// Request id 1 start time 1
+// Request id 1 start time 1
+// Request id 1 start time 1
+.
+.
+.
+// Request id 5 start time 5
+
+
+startTime:
+expectedTimeout: timeout + startTime
+endTime:
+
+currentTime:
+
+e1: 5
+e2: 6
+e3: 7
+
+0
+c: 10
+
+---
+10:
+
+
+r1.s: 3
+
+
+
+
